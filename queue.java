@@ -1,43 +1,44 @@
 @SuppressWarnings("unchecked")
-public class queue<T> {
-    int n = 10;
-    T[] array = (T[]) new Object[n];
-    int tail = -1;
-    int head = -1;
+public class Queue<T>{
+    T[] arr = (T[]) new Object[10];
+    int tail = -1, head=-1;
 
-    public boolean isFull() {
-        if (head + n == tail) {
+    public boolean isFull(){
+        if(tail == arr.length-1){
             return true;
         }
         return false;
     }
-
-    public boolean isEmpty() {
-        if (head == tail) {
+    public boolean isEmpty(){
+        if(tail == head){
             return true;
         }
         return false;
     }
-
-    public int size() {
-        return head - tail;
+    public T peek(){
+        if(isFull()){
+            return null;
+        }
+        else [
+            return arr[head+1];
+        ]
     }
-
-    public void inQueue(T value) {
-        if (isFull()) {
-            System.out.println("Queue is full");
-        } else {
+    public void enqueue(T value){
+        if(isFull()){
+            System.out.println("FUll");
+        }
+        else {
             tail++;
-            array[tail] = value;
+            arr[tail] = value;
         }
     }
-
-    public T dequeue() {
-        if (isEmpty()) {
-            System.out.println("Queue is empty!");
-        } else
+    public T dequeue(){
+        if(isEmpty()){
+            return null;
+        }
+        else{
             head++;
-        return array[head];
-
+            return arr[head];
+        }
     }
 }

@@ -1,5 +1,5 @@
 @SuppressWarnings("unchecked")
-public class circularQ<T> {
+public class circularQ <T> {
     int n = 10;
     T[] array = (T[]) new Object[n];
     int tail = -1;
