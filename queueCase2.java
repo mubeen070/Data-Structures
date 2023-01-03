@@ -1,5 +1,5 @@
 @SuppressWarnings("unchecked")
-public class queue<T> {
+public class queueCase2<T> {
     T[] arr = (T[]) new Object[10];
     int tail = -1, head = -1;
 
@@ -11,7 +11,7 @@ public class queue<T> {
     }
 
     public boolean isEmpty() {
-        if (tail == head) {
+        if (tail == -1) {
             return true;
         }
         return false;
@@ -20,30 +20,24 @@ public class queue<T> {
     public T peek() {
         if (isFull()) {
             return null;
-        } else {
-            return arr[head + 1];
         }
-    }
-
-    public void enqueue(T value) {
-        if (isFull()) {
-            System.out.println("FUll");
-        } else {
-            tail++;
-            arr[tail] = value;
-        }
+        return arr[0];
     }
 
     public T dequeue() {
         if (isEmpty()) {
             return null;
         } else {
-            head++;
-            return arr[head];
+            T value = arr[0];
+            moveForward();
+            return value;
         }
     }
 
-    public int size() {
-        return tail - head;
+    public void moveForward() {
+        for (int i = 0; i < tail; i++) {
+            arr[i] = arr[i + 1];
+        }
+        tail--;
     }
 }
