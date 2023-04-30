@@ -1,4 +1,5 @@
 public class deQueue<T> {
+    @SuppressWarnings("unchecked")
     T[] arr = (T[]) new Object[10];
     int tail = -1, head = -1;
 

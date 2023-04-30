@@ -1,6 +1,6 @@
 public class bubbleSort {
     public static void main(String[] args) {
-        int[] arr = { 10, 2, 4, 14, 23, 122, 34, 14, 2312412, 321 };
+        int[] arr = { 10, 21, 4, 14, 233, 122, 34, 124, 2312412, 321 };
         bubble_sort(arr);
         for (int i : arr) {
             System.out.print("\t" + i);

@@ -44,4 +44,21 @@ public class binarytree {
             inOrderTraversal(n.right);
         }
     }
+    public void inOrder() {
+        if (isEmpty()) {
+            System.out.println("Tree is Empty");
+            return;
+        }
+        inOrderRec(root);
+    }
+
+    private void inOrderRec(Node root) {
+        if (root == this.root) {
+            System.out.print("InOrder=>");
+        }
+        if (root != null) {
+            inOrderRec(root.left);
+            System.out.print(root.data + "=>");
+            inOrderRec(root.right);
+        }
 }
